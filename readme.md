@@ -12,3 +12,11 @@
 ## Mapping
 ## State
 ## Form
+
+## Recordings:
+
+[Videos](https://www.youtube.com/watch?v=RtANRncf3CI&list=PLj2_sGY1obtvQH2rsjx-PiBv54x4FT3Jr)
+
+## References
+
+[30 Days Of React](https://github.com/Asabeneh/30-Days-Of-React)
