@@ -11,7 +11,11 @@
 
 ## Props
 ## Mapping
+
+# WEEK 3
+
 ## State
+## Event Handling
 ## Form
 
 ## Recordings:
