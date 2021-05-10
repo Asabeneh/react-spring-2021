@@ -6,6 +6,7 @@
 ## JSX
 ## Function: Functional Component
 
+
 ## WEEK 2
 
 ## Props
