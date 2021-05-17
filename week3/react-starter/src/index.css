@@ -1,0 +1,337 @@
+/* Universal select */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CSS html  */
+html {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: Roboto;
+    line-height: 160%;
+    margin:0 0 150px 0;
+    font-weight: 400;
+
+}
+
+/* CSS for the header part */
+header,footer {
+  background: #f3d36b;
+  padding: 20px;
+  text-align: center;
+}
+#title-1 {
+   font-size: 44px;
+   text-transform: uppercase;
+   margin:35px auto;
+}
+#washera {
+   
+    color: #eb4646;
+}
+
+#academy {
+    color:#2dd60f;
+}
+
+/*  Navigation or menu css */
+.menu-list {
+    margin:15px auto;
+}
+
+.menu-list li {
+   
+    display: inline-block;
+    margin-right: 15px;
+   
+}
+
+.menu-list li a {
+    color:black;
+    text-decoration: none;
+    padding:3px;
+    font-weight: 900;
+}
+.active {
+    border-bottom:3px solid red;
+}
+main {
+  
+    padding: 30px 50px 30px 50px;
+}
+.page-section {
+    margin:30px auto;
+    padding:30px;
+    border-radius: 5px;;
+}
+h1 {
+    margin:10px auto;
+    text-transform: uppercase;
+}
+.introduction {
+background-color: rgb(100, 71, 155);
+color:white;
+}
+.section-2{
+  background-color: rgb(230, 219, 120);
+
+}
+.technologies {
+    padding: 30px;
+    background-color: rgb(214, 130, 50);
+    color: white;
+}
+
+.tech-1{
+  background: rgb(42, 28, 94) 
+}
+.tech-2 {
+  background: rgb(119, 91, 219) 
+}
+.meters {
+  background:rgb(34, 32, 32);
+  color:white;
+}
+.progresses {
+  background:rgb(107, 57, 172);
+  color:white;
+}
+.details-summary {
+  background:rgb(231, 189, 49);
+}
+.code-formatting{
+  color:white;
+  background:rgb(144, 144, 218);
+}
+img {
+  width:10%;
+}
+
+   
+.video-wrapper{
+  text-align: center;
+}
+video {
+    text-align: center;;
+    width: 80%;
+}
+
+.audio {
+    margin:25px auto;
+}
+.audio h2{
+    margin:5px;
+    font-weight: 400;
+}
+meter {
+    height: 50px;
+    width: 500px;
+}
+
+progress {
+    height: 50px;
+    width: 75%;
+}
+
+pre span {
+
+    color: rgb(31, 85, 233);
+}
+
+/* Table CSS */
+table,
+td,
+th {
+    border: 1px solid rgb(135, 80, 236);
+    border-collapse: collapse;
+    font-weight: 300;
+}
+
+table {
+    width: 100%;
+    margin: 50 auto;
+}
+
+thead {
+    background-color: rgb(135, 80, 236);
+    color: white;
+}
+
+td {
+    padding-left: 10px;
+}
+
+
+
+
+.box-wrapper {
+    z-index: -100;
+    position: relative;
+    background-color: lightblue;
+    height: 400px;
+    width: 100%;
+    padding: 0;
+}
+
+.box {
+    position: absolute;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 90px;
+    border: 10px solid rgb(241, 236, 236);
+    color: white;
+}
+
+#box1 {
+    background-color: rgb(101, 236, 101);
+    ;
+    bottom: 0;
+    left: 0;
+}
+
+#box2 {
+    left: 0px;
+    top: 0px;
+    background-color: rgb(224, 75, 75);
+    ;
+}
+
+#box3 {
+    background-color: rgb(238, 207, 69);
+    right: 0;
+    top: 0;
+}
+
+#box4 {
+    right: 0;
+    bottom: 0;
+    background: purple;
+
+}
+
+.web-tech {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    color: white;
+    left: 450px;
+    top: 150px;
+
+}
+
+#html {
+    z-index: 3;
+    background-color: rgb(243, 102, 20);
+}
+
+#css {
+    left: 580px;
+    background-color: rgb(12, 118, 240);
+    top: 165px;
+    z-index: 1;
+}
+
+#js {
+    left: 720px;
+    background-color: rgb(236, 218, 53);
+    top: 180px;
+    z-index: 2;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    ;
+}
+/* Footer css */
+footer {
+  position: absolute;
+  bottom: 0;;
+  width: 100%;;
+
+}
+.footer-wrapper > div a {
+  margin:25px;
+}
+.fa-github-square {
+color:#333;
+font-size:32px;
+}
+
+.fa-linkedin {
+color:#2867B2;
+font-size:32px;
+} 
+.fa-twitter-square {
+  color:#00acee;
+  font-size:32px;
+
+}
+.footer-arrow{
+  text-align: right;
+  font-size:32px;
+
+}
+.footer-arrow i {
+color: hsl(0, 51%, 58%);
+}
+/* ADDRES CSS */
+.fa-envelope-open, .fa-phone-square, .fa-envelope-square{
+  font-size:18px;
+}
+/* Application page css */
+form {
+  width:55%;
+  /* border: 2px solid red; */
+}
+.form-group {
+  margin:10px auto;
+}
+input[type='text'],
+input[type='date'],
+input[type='email'], textarea, select {
+display: block;
+padding:8px;
+width:60%;
+border-radius: 3px;
+border:2px solid rgba(203, 93, 93, 0.25);
+margin-top:3px;
+}
+input[type='text']:hover,
+input[type='date']:hover,
+input[type='email']:hover,
+textarea:hover,
+select:hover {
+ 
+  border: 2px solid rgba(203, 93, 93, 1);
+
+}
+.btn{
+  padding:10px 25px;
+  background:rgb(69, 204, 69);
+  color:white;
+  border: 2px solid rgb(69, 204, 69);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  
+}
+
+/* Course and Courses Component */
+
+.course {
+    padding:25px 10px;
+    box-shadow: 0px 0px 5px 3px rgba(128, 128, 128, 0.25);
+    margin:10px auto;
+}

@@ -1,4 +1,4 @@
-const courses = { 
+export const courses = { 
     author:{
     firstName:'Asabeneneh',
     lastName:'Yetayeh',
