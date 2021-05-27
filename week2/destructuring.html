@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started React:Revision</title>
+</head>
+<body>
+    <div id = 'root'></div>
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+        const rootElement = document.getElementById('root')
+
+        const data = {
+            author:{
+                firstName:'Asabeneh',
+                lastName:'Yetayeh',
+            },
+            course:{
+                title:'Getting Started React',
+                subtitle:'A popular JavaScript library',
+                skills: ['HTML', 'CSS','JavaScript'],
+                year:new Date().getFullYear()
+            }
+        }
+
+       const  Header = ()  => {
+           const {
+            author:{firstName, lastName}, 
+           course:{title, subtitle, skills, year}
+        } = data
+           return (<header>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+            <p>Author: {firstName} {lastName}</p>
+            <small>Year: {year}</small>
+    </header>)
+       }
+    
+
+        const Main = () =>  {
+            const {
+               course:{title, subtitle, skills, year}
+            } = data
+            return (
+                <main>
+                    <p>2 + 3 = {2 + 3} </p>
+                    <p>2 ^ 3 = {2 ** 3} </p>
+                    <p>Prerequisite to get started React</p>
+                    <p>Numbers of skills {skills.length}</p>
+                    <ul>
+                        {skills}
+                    </ul>
+                </main>
+            )
+        }
+
+        const Footer = () =>  {
+            return  (
+                <footer>
+                    <p>Copyright &copy; {data.course.year} by {data.author.firstName} {data.author.lastName}</p>
+                </footer>
+            )
+        }
+        
+        ReactDOM.render(<div>
+            <Header />
+            <Main />
+            <Footer />
+     
+        </div>, rootElement)
+
+
+    
+
+
+
+</script>
+</body>
+</html>

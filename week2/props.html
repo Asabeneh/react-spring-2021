@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started React | Props</title>
+    <style>
+       .course {
+        border:2px solid gray;
+        margin:5px auto;
+        padding:30px 20px;
+        border-radius:3px;
+       }
+    </style>
+</head>
+<body>
+<div id = 'root'></div>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src ='./courses-data.js'></script>
+<script type="text/babel">
+
+
+    
+    const Course = ({author, course}) => {
+        console.log(background)
+        const {firstName, lastName} = author
+        const {title, subtitle, published, background} = course
+       /* const styles = {
+            border:'2px solid gray',
+            margin:'5px auto',
+            padding:'30px 20px',
+            borderRadius:'3px'
+        }
+        */
+        return (
+            <div  className = 'course' style = {{background}}>
+                <h1>{title}</h1>
+                <h2>{subtitle}</h2>
+                <p>{firstName} {lastName}</p>
+                <small>{published}</small>
+            </div>
+        )
+    }
+
+const Courses = (props) => {
+    const {courses} = props
+    const courseList = courses.repos.map((course) => (<Course key = {course.title} course = {course} author = {courses.author} background = {courses.background}/>))
+    return <div>
+        <h1>Courses {props.courses.repos.length}</h1>
+        <ul>
+            {courseList}
+        </ul>
+    </div>
+}
+
+
+ReactDOM.render(
+    <Courses courses = {courses}/>
+
+, document.getElementById('root'))
+
+</script>
+</body>
+</html>

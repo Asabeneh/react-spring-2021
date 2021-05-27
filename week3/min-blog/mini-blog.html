@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Mini Blog</title>
+   
+ 
+</head>
+<body>
+    <div id = 'root'></div>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;900&family=Lato:wght@300;400;900&family=Merriweather:wght@400;700;900&family=Montserrat:wght@300;400;500;600;900&family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600;900&family=Raleway:wght@400;500;600;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@300;400;600;700&family=Roboto:wght@300;400;500;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src='./data/courses.js'></script>
+<script type="text/babel">
+        const rootElement = document.getElementById('root')
+
+    
+        const styles = {
+            color:'white',
+            background:'black',
+            padding:'25px',
+        }
+
+        const About = () => {
+            return (
+                <div id="about" >
+                    <h1>About Us</h1>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam consectetur, ipsa minus quod, odio assumenda quos repudiandae magnam, iure dolores non sapiente. Enim eum laudantium reprehenderit nostrum, labore deleniti ex!
+                        Laboriosam, eligendi sunt. Vitae architecto odit temporibus officia, esse maxime! Voluptate ducimus voluptatum ipsum repellat odio possimus architecto unde magni expedita aliquid provident assumenda quibusdam earum, delectus culpa vero libero.
+                        Iste temporibus inventore itaque omnis! Deleniti itaque laboriosam, eos ducimus optio temporibus aut quasi commodi autem, asperiores fuga corporis? Neque maiores inventore consequatur provident praesentium iure eius placeat aliquam sapiente?
+                        Saepe sit numquam ducimus eligendi minus amet iste natus velit facilis odit officiis aliquam, expedita vel officia beatae. Ullam, at nulla? Delectus aliquam totam, illum ab fugit aperiam vero facilis!
+                        Totam incidunt delectus earum reiciendis reprehenderit impedit laudantium at beatae modi atque. Dolores, aliquam illum. Veritatis beatae obcaecati, iusto architecto voluptatibus placeat officiis. Dolore soluta similique ipsam tempora alias ea.
+                    </p>
+                </div>
+            )
+    
+        }
+
+        const SocialMediaLinks = () => {
+            return (
+                <div>
+                    <a href='https://github.com/Asabeneh' target="_blank"><i className="fab fa-github-square"></i></a>
+                    <a href="https://www.linkedin.com/in/asabeneh/" target="_blank"><i className="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/Asabeneh" target="_blank">
+                        <i className="fab fa-twitter-square"></i>
+                    </a>
+                </div>
+            )
+        }
+
+
+        const Navbar = () => {
+            return (
+                <ul className="menu-list">
+                    <li>
+                        <a href="#" className='active'>Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#courses">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#apply">Apply</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">Contacts</a>
+                    </li>
+                </ul>
+            )
+        }
+
+  
+       const  Header = ()  =>  {
+        const title = 'Getting Started React'
+        const subtitle = 'A popular JavaScript library'
+        let firstName = 'Asabeneh'
+        let lastName = 'Yetayeh'
+        let year = new Date ().getFullYear()
+           return (<header>
+               <div className="header-wrapper">
+                    <div>
+                    <h1>{title}</h1>
+                    <h2>{subtitle}</h2>
+                    <p>Author: {firstName} {lastName}</p>
+                    <small>Year: {year}</small>
+                    </div>
+                    <div>
+                        <Navbar />  
+                    </div>
+               </div>
+    </header>)
+       }
+
+
+       const Course = (props) => {
+        const {
+            title, subtitle, name, stars, forks, published
+        } = props.course
+
+           return (<div className='course'>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+            <p>{name}</p>
+            <p>Created on {published}</p>
+            <small>stars:{stars}</small>
+        </div>)
+       }
+
+       const Courses = ({author, repos}) => {
+           return (
+               <div id="courses-wrapper">
+                   <h1>Courses</h1>
+                   <div className="courses">
+                    {repos.map((repo) =>  <Course key = {repo.title} course = {repo}/>)}
+                   </div>
+               </div>
+           )
+       }
+
+       const Project = (props) => {
+           const {name, stars, forks, days, published, link} = props.project
+           return (
+            <tr>
+                <td>{name}</td>
+                <td>{days}</td>
+                <td>{published}</td>
+                <td>{stars}</td>
+                <td>{forks}</td>
+                <td><a href= {link}>Link</a></td>
+            </tr>
+
+           )
+       }
+
+       const Projects = (props) => {
+           const {repos, author} = props
+           return (
+            <div id="projects">
+                <h1>Projects</h1>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Challenge</th>
+                                <th>Days</th>
+                                <th>Time</th>
+                                <th>Stars</th>
+                                <th>Forks</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {
+                            repos.map((repo) => <Project key = {repo.name} project = {repo}/>)
+                           }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           )
+       }
+
+       const ApplicationForm = () => {
+           return (
+            <div id="apply">
+            <h1>Application Form</h1>
+            <form>
+                    <div className="form-group">
+                    <label htmlFor="firstname">First Name</label>
+                    <input type="text" id="firstname" placeholder="Your name" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="lastname">Last Name</label>
+                    <input type="text" id="lastname" placeholder="Your name" />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="company">Company</label>
+                    <input type="text" id="company" placeholder="Your companyname" />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email" />
+                </div>
+          
+        <div className="form-group">
+            <label htmlFor="dateofbirth">Date of birth</label>
+            <input type="date" id="dateofbirth" />
+
+        </div>
+        <div className="form-group">
+            <label htmlFor="color">Your favorite Color</label>
+            <input id="color" type="color" />
+        </div>
+        <div className="form-group">
+            <p>What are your skills</p>
+            <input type="checkbox" id="html" /> <label htmlFor="html">HTML</label> <br />
+            <input type="checkbox" id="css" /> <label htmlFor="css">CSS</label> <br />
+            <input type="checkbox" id="js" /> <label htmlFor="js">JavaScript</label> <br />
+            <input type="checkbox" id="react" /> <label htmlFor="react">React</label> <br />
+            <input type="checkbox" id="reduc" /> <label htmlFor="reduc">Redux</label>
+        </div>
+        <div className="form-group">
+            <p>Gender</p>
+            <input type="radio" id='female' name='gender' /> <label htmlFor="female">Female</label> <br />
+            <input type="radio" id='male' name='gender' /> <label htmlFor="male">Male</label> <br />
+            <input type="radio" id='other' name='gender' /> <label htmlFor="other">Other</label>
+        </div>
+        <div className="form-group">
+            <p>Select your country</p>
+            <select name="country" id="country">
+                <option value="">-- Select Country --</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Eriteria">Eriteria</option>
+                <option value="Sudan">Sudan</option>\
+                <option value="Kenya">Kenya</option>
+
+                <option value="Somalia">Somalia</option>
+                <option value="Djibouti">Djibouti</option>
+            </select>
+        </div>
+        <div className="form-group">
+            <label htmlFor="message">Leave your message</label> <br />
+            <textarea name="message" id="message" cols="80" rows="10"></textarea>
+        </div>
+        <div className="form-group">
+            <input type="file" />
+        </div>
+        <div className="form-group">
+            <input type="checkbox" id='agree' />
+            <label htmlFor="agre">
+                <small>
+                    I agreed that all the information I have provided is true and belongs to me.
+                </small>
+            </label>
+        </div>
+        <div className="form-group">
+            <input type="submit" value='Submit' className="btn" />
+        </div>
+             
+        </form>
+
+</div>
+
+           )
+       }
+
+    const Contacts = () => {
+        return (
+            <div id="contacts">
+                <h1>Contact Us</h1>
+               <form>
+                    <div className="form-group">
+                        <label htmlFor="firstname">First Name</label>
+                        <input type="text" id="firstname" placeholder="Your name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="lastname">Last Name</label>
+                        <input type="text" id="lastname" placeholder="Your name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="company">Company</label>
+                        <input type="text" id="company" placeholder="Your companyname" />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email" />
+                    </div>
+
+            <div className="form-group">
+                <label htmlFor="message">Leave your message</label> <br />
+                <textarea name="message" id="message" cols="80" rows="10"></textarea>
+            </div>
+    
+            <div className="form-group">
+                <input type="submit" value='Submit' className="btn" />
+            </div>
+            </form>
+    
+            </div>
+           
+           
+        )
+    }
+
+
+        const skills = ['HTML', 'CSS','JavaScript']
+
+        const Main = () => (
+            <main>
+               <div className='main-wrapper'>
+                <About />
+                <Courses {...courses} />
+                <Projects {...courses }/>
+                <ApplicationForm />
+                <Contacts />
+               </div>
+            </main>
+        )
+
+    
+        const Footer = () =>  {
+            let firstName = 'Asabeneh'
+            let lastName = 'Yetayeh'
+            let year = new Date ().getFullYear()
+            return  (
+                <footer>
+                  <div className="footer-wrapper">
+                    <SocialMediaLinks />
+                    <div>
+                     <p>Copyright &copy; {year} by {firstName} {lastName}</p>
+                    </div>
+                  </div>
+                </footer>
+            )
+    
+    
+        }
+   
+  
+        
+        ReactDOM.render(
+      <React.Fragment>
+            <Header />
+            <Main />
+            <Footer />
+      </React.Fragment>,
+        
+        rootElement)
+
+
+    
+
+
+
+</script>
+</body>
+</html>

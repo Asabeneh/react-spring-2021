@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started React</title>
+</head>
+<body>
+    <div id='root'></div>
+ 
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+    const rootElement = document.getElementById('root')
+    // JSX - stands for JavaScript XML, it allows to write JS and html together
+    // Components - are usable ui - functional, class baseed
+    
+
+    const title = 'Getting Started React'
+    const subtitle = 'A JavaScript library'
+    const date = new Date ()
+    let firstName = 'Asabeneh'
+    let lastName = 'Yetayeh'
+
+
+    const Header =  () =>  {
+        return (<header>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+        <p>Year:{date.getFullYear()}</p>
+        <small>{firstName} {lastName}</small>
+    </header>)
+    }
+
+    const skills = ['HTML','CSS','JavaScript']
+    const skillList = skills.map((skill) => <li>{skill}</li>)
+
+    const Main = () => {
+        return (<main>
+        <p>The basic requirements to get started React</p>
+        <ul>
+        {skillList}
+        </ul>
+    </main>)
+    }
+
+    const Footer = () => {
+        return  (<footer>
+        <small>Copyright 2021</small>
+        <small>Asabeneh Yetayeh</small>
+    </footer>)
+    }
+
+
+        
+    ReactDOM.render(<div>
+    <Header />
+    <Main />
+    <Footer />
+    </div>, rootElement)
+
+</script>
+
+</body>
+</html>

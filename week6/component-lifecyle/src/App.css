@@ -1,0 +1,17 @@
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.country {
+  height:300px;
+  width: 250px;
+  border:2px solid gray;
+  margin:25px;
+  padding:30px;
+}
+
+img {
+  width:35%;
+}
