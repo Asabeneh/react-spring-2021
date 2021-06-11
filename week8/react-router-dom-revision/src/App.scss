@@ -1,0 +1,15 @@
+$text-color:green;
+$background-color:gray;
+
+.active {
+  color:orange;
+}
+
+div {
+  p {
+    span {
+      color:$text-color;
+      background-color:$background-color;
+    }
+  }
+}
